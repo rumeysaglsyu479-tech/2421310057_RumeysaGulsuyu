@@ -30,7 +30,13 @@ Aracın port taraması ve MAC adresi tespiti yapabilmesi için yönetici (`sudo`
 Çalıştırdığınızda araç sizden bir IP adresi isteyecektir (Örn: `127.0.0.1` veya hedef makinenin IP adresi). IP girildikten sonra tarama ve analiz otomatik olarak başlayacak, sonuçlar terminale yazdırılacak ve `guvenlik_raporu.html` olarak klasöre kaydedilecektir.
 
 ## Ekran Görüntüleri
-<img width="1920" height="1080" alt="Ekran Görüntüsü (1390)" src="https://github.com/user-attachments/assets/e2557a3e-bc60-46f6-a96c-c1ac980e217b" />
-<img width="1920" height="1080" alt="Ekran Görüntüsü (1388)" src="https://github.com/user-attachments/assets/498386a3-489c-40de-8b37-e20af0978dca" />
-<img width="1920" height="1080" alt="Ekran Görüntüsü (1387)" src="https://github.com/user-attachments/assets/2074f4c7-b73d-48c6-83fb-5a3dc8bf3409" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1413)" src="https://github.com/user-attachments/assets/fdbfc728-a393-4d26-8bd5-8e8bcc450c68" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1409)" src="https://github.com/user-attachments/assets/6fb417b5-26e8-4601-93b8-cffbcf539cf5" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1411)" src="https://github.com/user-attachments/assets/481dd08c-1d2a-425c-a9a7-6ff1bf9e45ef" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1412)" src="https://github.com/user-attachments/assets/72043bfd-a64c-41bc-88db-9cb64828b147" />
+
+
+
+
+
 
