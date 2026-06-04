@@ -30,10 +30,26 @@ Aracın port taraması ve MAC adresi tespiti yapabilmesi için yönetici (`sudo`
 Çalıştırdığınızda araç sizden bir IP adresi isteyecektir (Örn: `127.0.0.1` veya hedef makinenin IP adresi). IP girildikten sonra tarama ve analiz otomatik olarak başlayacak, sonuçlar terminale yazdırılacak ve `guvenlik_raporu.html` olarak klasöre kaydedilecektir.
 
 ## Ekran Görüntüleri
-<img width="1920" height="1080" alt="Ekran Görüntüsü (1413)" src="https://github.com/user-attachments/assets/fdbfc728-a393-4d26-8bd5-8e8bcc450c68" />
-<img width="1920" height="1080" alt="Ekran Görüntüsü (1409)" src="https://github.com/user-attachments/assets/6fb417b5-26e8-4601-93b8-cffbcf539cf5" />
-<img width="1920" height="1080" alt="Ekran Görüntüsü (1411)" src="https://github.com/user-attachments/assets/481dd08c-1d2a-425c-a9a7-6ff1bf9e45ef" />
-<img width="1920" height="1080" alt="Ekran Görüntüsü (1412)" src="https://github.com/user-attachments/assets/72043bfd-a64c-41bc-88db-9cb64828b147" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1433)" src="https://github.com/user-attachments/assets/ad4c3229-ecba-4368-bea7-eb67614bd5e6" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1434)" src="https://github.com/user-attachments/assets/6b4d145c-9159-46d6-8473-1eaab31c59da" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1435)" src="https://github.com/user-attachments/assets/2c0aaf7e-57ec-44ef-9a68-37ec6287d542" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1435)" src="https://github.com/user-attachments/assets/8603af65-f109-40c9-98b0-32fe768c7d6e" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1436)" src="https://github.com/user-attachments/assets/bb7f7f25-66fe-4c8d-a8a6-40643bfb07a8" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1437)" src="https://github.com/user-attachments/assets/0676093f-6eb7-47fe-8de5-c57f9284df8f" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1442)" src="https://github.com/user-attachments/assets/a2648627-b4bf-4eb1-bd57-fef294e235d2" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1438)" src="https://github.com/user-attachments/assets/b36f616b-6b36-4873-9ccf-cbd540a5cf3f" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1439)" src="https://github.com/user-attachments/assets/8cf83f86-0821-4f76-8367-1bfe851fe9d0" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (1440)" src="https://github.com/user-attachments/assets/5f0b9121-8649-4996-bec9-b27fe31aee53" />
+
+
+
+
+
+
+
+
+
+
 
 
 
