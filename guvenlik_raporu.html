@@ -1,0 +1,136 @@
+
+        <html>
+        <head>
+            <meta charset='utf-8'>
+            <title>Güvenlik Raporu</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; color: #333; }
+                h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+                h3 { color: #c0392b; margin-top: 30px; }
+                .ham-veri { background: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 5px; font-family: monospace; white-space: pre-wrap; }
+                .ai-rapor { background: #fff; padding: 20px; border-radius: 5px; border: 1px solid #ddd; white-space: pre-wrap; line-height: 1.6; }
+            </style>
+        </head>
+        <body>
+            <h2>🛡️ Hedef: 192.168.136.1 - Güvenlik Tarama Raporu</h2>
+            
+            <h3>📌 1. Nmap Port Tarama (M1) Bulguları</h3>
+            <div class="ham-veri">- Port: 5357/tcp | Servis: http 2.0
+</div>
+            
+            <h3>📌 2. Aktif Cihaz Keşfi (M4) Bulguları</h3>
+            <div class="ham-veri">- IP: 192.168.136.1 | MAC: 00:50:56:C0:00:08 | Üretici: VMware
+- IP: 192.168.136.128 | MAC: MAC Bulunamadı | Üretici: Bilinmiyor
+- IP: 192.168.136.2 | MAC: 00:50:56:FA:35:F1 | Üretici: VMware
+- IP: 192.168.136.254 | MAC: 00:50:56:E2:12:B2 | Üretici: VMware
+</div>
+            
+            <h3>🧠 3. Yapay Zeka Risk Analizi</h3>
+            <div class="ai-rapor">## Siber Güvenlik Tarama Raporu: Hedef Makine 192.168.136.1 Analizi
+
+**Hazırlayan:** [Kıdemli Siber Güvenlik Uzmanı Adınız/Unvanınız]
+**Tarih:** 26 Ekim 2023
+**Hedef Makine:** 192.168.136.1
+
+---
+
+### 1. Giriş
+
+Bu rapor, ağ içerisinde bulunan 192.168.136.1 IP adresine sahip hedef makine üzerinde gerçekleştirilen port tarama (M1) ve ağ cihazları tespiti (M4) bulgularını analiz etmek, tespit edilen açıklıklar için risk değerlendirmesi yapmak, kapatılması veya güncellenmesi gereken servisler hakkında somut öneriler sunmak ve genel bir güvenlik özeti sağlamak amacıyla hazırlanmıştır.
+
+### 2. Hedef Makine Bilgileri
+
+*   **IP Adresi:** 192.168.136.1
+*   **MAC Adresi:** 00:50:56:C0:00:08
+*   **Üretici:** VMware
+    *   *Yorum:* Hedef makinenin bir VMware sanal makinesi olduğu tespit edilmiştir. Bu bilgi, sanallaştırma katmanına yönelik potansiyel güvenlik risklerinin de göz önünde bulundurulması gerektiğini göstermektedir.
+
+### 3. Bulguların Analizi ve Risk Değerlendirmesi
+
+#### 3.1. M1 Bulguları (Port Tarama)
+
+*   **Port:** 5357/tcp
+*   **Servis:** http 2.0
+
+**Analiz:**
+Hedef makinede 5357/tcp portunun açık olduğu ve tarama sonucunda "http 2.0" servisi olarak tanımlandığı görülmektedir. HTTP genellikle 80 (HTTP) veya 443 (HTTPS) portlarında çalışırken, 5357 portu standart bir HTTP portu değildir. Bu portun yaygın kullanım alanları arasında Web Services Dynamic Discovery (WS-Discovery) veya Windows Remote Management (WinRM) gibi protokoller bulunmaktadır. Tarama aracının "http 2.0" olarak tanımlaması, ya gerçekten bu port üzerinde özelleştirilmiş bir HTTP/2 servisi çalıştığını ya da HTTP benzeri bir iletişim protokolünün yanlış tanımlandığını düşündürmektedir.
+
+**Risk Değerlendirmesi:**
+
+*   **Yüksek Risk (Potansiyel):**
+    *   **Eğer Gerçekten Bir Web Servisi ise (HTTP/2):** Standart olmayan bir port üzerinde çalışan bir web servisi, güvenlik denetimlerinden kaçabilir veya gözden kaçabilir. Web uygulamalarında (XSS, SQL Enjeksiyonu, Dosya Yükleme Zafiyetleri, Uzaktan Kod Çalıştırma (RCE), kimlik doğrulama/yetkilendirme zafiyetleri vb.) bilinen tüm zafiyetlere açık olabilir. Ayrıca, servisin güncel olmaması veya hatalı yapılandırılması durumunda ciddi güvenlik açıkları barındırabilir.
+    *   **Eğer WinRM (Windows Remote Management) ise:** WinRM, Windows makineler üzerinde uzaktan yönetim için kullanılan kritik bir servistir. Eğer WinRM çalışıyorsa ve zayıf kimlik doğrulama, varsayılan parolalar veya açıklardan etkilenen bir sürüm kullanıyorsa, saldırganlar uzaktan kod çalıştırarak veya sistem üzerinde tam kontrol sağlayarak ciddi bir ihlal gerçekleştirebilirler.
+    *   **Eğer WS-Discovery ise:** WS-Discovery protokolü genellikle ağda cihaz keşfi için kullanılır. Bu protokolün açık olması, ağdaki cihazlar hakkında bilgi sızdırmak için kötüye kullanılabilir. Ayrıca, bazı durumlarda DDoS saldırıları için bir amplifikasyon vektörü olarak kullanılabilir.
+
+*   **Gizlilik Riski:** Açık bir portun bilinçsizce çalıştırılması, saldırganlara hedef makine hakkında ek bilgi (işletim sistemi, servis sürümü vb.) toplama imkanı sunar.
+
+#### 3.2. M4 Bulguları (Ağ Cihazları)
+
+*   **IP:** 192.168.136.1 | MAC: 00:50:56:C0:00:08 | Üretici: VMware (Hedef Makine)
+*   **IP:** 192.168.136.128 | MAC: MAC Bulunamadı | Üretici: Bilinmiyor
+*   **IP:** 192.168.136.2 | MAC: 00:50:56:FA:35:F1 | Üretici: VMware
+*   **IP:** 192.168.136.254 | MAC: 00:50:56:E2:12:B2 | Üretici: VMware
+
+**Analiz:**
+Ağ tarama bulguları, hedef makine ile aynı alt ağda birden fazla VMware sanal makinesi bulunduğunu göstermektedir. Bu durum, ağın sanallaştırılmış bir ortam olduğunu doğrular.
+`192.168.136.128` IP adresi için MAC adresinin bulunamamış olması dikkat çekicidir. Bu durum, cihazın çevrimdışı olduğunu, ağdan filtrelendiğini veya ARP yanıtı vermeyen özel bir cihaz/yapılandırma olduğunu gösterebilir.
+
+**Risk Değerlendirmesi:**
+
+*   **Sanallaştırma Katmanı Riski:** Sanallaştırma ortamları, hypervisor zafiyetleri (VM escape) veya yanlış yapılandırmalar nedeniyle ek güvenlik riskleri taşıyabilir. Bir VM'deki güvenlik açığı, aynı hypervisor üzerindeki diğer VM'leri veya doğrudan hypervisor'ı etkileyebilir.
+*   **Ağ Keşif Riski:** Ağdaki diğer aktif cihazların varlığı, saldırganlar için daha geniş bir saldırı yüzeyi anlamına gelir.
+*   **Gizli Cihaz Riski:** `192.168.136.128` IP'sinin MAC adresinin bulunamaması, detaylı inceleme gerektiren potansiyel bir anomali veya gizli varlık olabilir.
+
+### 4. Genel Güvenlik Özeti
+
+Hedef makine 192.168.136.1 üzerinde bir VMware sanal makinesi olarak tek bir açık port (5357/tcp) tespit edilmiştir. Bu portun "http 2.0" olarak tanımlanması, gerçek servisin ne olduğu konusunda belirsizlik yaratmakta olup, potansiyel olarak yüksek riskler taşımaktadır. Servisin türüne bağlı olarak (özelleştirilmiş HTTP/2, WinRM veya WS-Discovery) farklı ancak kritik güvenlik zafiyetleri barındırma potansiyeli vardır. Sanallaştırılmış bir ortamda bulunması, hypervisor güvenliğinin de kritik öneme sahip olduğunu göstermektedir. Ayrıca, MAC adresi bulunamayan bir IP adresinin varlığı, ağda ek bir inceleme gerektiren bir durumdur.
+
+### 5. Somut Öneriler
+
+Aşağıdaki öneriler, tespit edilen güvenlik risklerini azaltmak ve genel güvenlik duruşunu güçlendirmek amacıyla sunulmuştur:
+
+#### 5.1. Port 5357/tcp için Detaylı Analiz ve Güvenlik Tedbirleri
+
+1.  **Servis Doğrulama ve İhtiyaç Analizi:**
+    *   **Acil Eylem:** 5357/tcp portunda gerçekte hangi servisin çalıştığını (HTTP/2, WinRM, WS-Discovery veya başka bir uygulama) **kesin olarak tespit edin**. Bunun için `nmap -sV -p 5357 192.168.136.1` gibi daha detaylı tarama komutları kullanılabilir veya doğrudan makine üzerinde servis kontrolü yapılabilir.
+    *   Bu servisin gerçekten gerekli olup olmadığını değerlendirin. Eğer gereksiz ise, **derhal kapatılmalıdır.**
+
+2.  **Eğer Bir Web Servisi (HTTP/2) ise:**
+    *   **Yama Yönetimi:** Çalışan web sunucusu (Apache, Nginx, IIS vb.), uygulama sunucusu (Tomcat, JBoss vb.) ve kullanılan tüm web uygulamaları/framework'leri (örn. Node.js, Python Flask) dahil olmak üzere tüm bileşenlerin en son güvenlik yamaları ile güncel olduğundan emin olun.
+    *   **Güvenli Yapılandırma:** Varsayılan parolaları değiştirin, gereksiz servisleri/modülleri devre dışı bırakın, zayıf şifreleme algoritmalarını kullanmaktan kaçının. Yalnızca gerekli minimum yetkilerle çalışacak şekilde yapılandırın.
+    *   **Girdi Doğrulama:** Web uygulamasının tüm kullanıcı girdilerini (form alanları, URL parametreleri, HTTP başlıkları) sıkı bir şekilde doğruladığından emin olun.
+    *   **Erişim Kontrolü:** Bu web servisine dışarıdan erişim gerekmiyorsa, firewall kuralları ile sadece güvenilir dahili IP adreslerinden erişime izin verin.
+    *   **HTTPS Uygulama:** Eğer web servisi kritik bilgi iletişimi yapıyorsa, HTTPS (443/tcp) kullanmak ve güçlü TLS şifrelemeleri uygulamak zorunludur.
+
+3.  **Eğer WinRM (Windows Remote Management) ise:**
+    *   **Erişim Kısıtlaması:** WinRM erişimini sadece belirli yönetim IP adresleri veya güvenilir ağ segmentleri ile sınırlandırmak için firewall kuralları uygulayın.
+    *   **Kimlik Doğrulama:** Güçlü, karmaşık parolalar ve mümkünse iki faktörlü kimlik doğrulama (2FA) kullanın. Varsayılan yönetici hesaplarından kaçının.
+    *   **Güncel Tutma:** İşletim sisteminin ve WinRM bileşenlerinin en son güvenlik güncellemelerini aldığından emin olun.
+    *   **TLS Kullanımı:** WinRM iletişiminin her zaman TLS üzerinden güvenli bir şekilde yapılmasını sağlayın.
+
+4.  **Eğer WS-Discovery ise:**
+    *   **Devre Dışı Bırakma:** Eğer WS-Discovery fonksiyonelliği ağda aktif olarak kullanılmıyorsa, bu servisi derhal devre dışı bırakın.
+    *   **Erişim Kısıtlaması:** Eğer kullanılması zorunlu ise, firewall kuralları ile erişimi yalnızca yetkili ve güvenilir cihazlarla sınırlayın.
+
+#### 5.2. Genel Port ve Ağ Güvenliği Önerileri
+
+1.  **"Minimum Yetki" Prensibi:** Ağdaki tüm makinelerde sadece kesinlikle gerekli olan portlar açık olmalıdır. Gereksiz veya kullanılmayan tüm portlar kapatılmalıdır.
+2.  **Firewall Yapılandırması:** Hem hedef makine üzerinde çalışan host tabanlı firewall hem de ağ seviyesindeki firewall cihazları (örn. güvenlik duvarı) üzerinde, sadece gerekli olan trafiğe izin veren sıkı kurallar uygulayın.
+3.  **Varlık Yönetimi:** Ağdaki tüm cihazların (donanım, yazılım, sanal makineler) envanterini tutun ve hangi servislerin nerede çalıştığını belgeleyin.
+4.  **Ağ Segmentasyonu:** Kritik sunucuları ve hizmetleri, diğer ağ segmentlerinden izole edilmiş, güvenlik bölgelerinde tutun.
+
+#### 5.3. Sanallaştırma Ortamı Güvenliği
+
+1.  **Hypervisor Güvenliği:** VMware ESXi veya benzeri hypervisor'ın en son güvenlik yamaları ile güncel olduğundan ve güvenli bir şekilde yapılandırıldığından emin olun (örn. yönetim arayüzlerine erişimin kısıtlanması, güçlü kimlik doğrulama).
+2.  **VM Güvenliği:** Her bir sanal makinenin kendi içinde (guest OS) güvenlik yamalarının ve güncellemelerinin düzenli yapıldığından emin olun.
+
+#### 5.4. 192.168.136.128 IP Adresi İçin İnceleme
+
+1.  MAC adresi bulunamayan `192.168.136.128` IP adresinin durumunu araştırın. Bu cihazın ne olduğunu, neden MAC adresinin tespit edilemediğini ve ağdaki varlığının güvenlik açısından bir risk oluşturup oluşturmadığını belirleyin.
+
+### 6. Sonuç
+
+Hedef makine 192.168.136.1 üzerinde tespit edilen açık 5357/tcp portu, detaylı inceleme ve acil güvenlik tedbirleri gerektiren potansiyel bir risk taşımaktadır. Bu portun çalıştırdığı servisin doğru tespiti, ardından gereksiz ise kapatılması, gerekli ise sıkı güvenlik yapılandırmaları ve yama yönetimi hayati öneme sahiptir. Sanallaştırma ortamının güvenliği ve ağdaki diğer anormalliklerin giderilmesi, genel güvenlik duruşunu güçlendirecektir. Sürekli izleme, düzenli güvenlik taramaları ve proaktif risk yönetimi, bu tür risklerin minimize edilmesinde kritik rol oynar.</div>
+        </body>
+        </html>
+        
