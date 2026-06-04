@@ -33,7 +33,6 @@ Aracın port taraması ve MAC adresi tespiti yapabilmesi için yönetici (`sudo`
 <img width="1920" height="1080" alt="Ekran Görüntüsü (1433)" src="https://github.com/user-attachments/assets/ad4c3229-ecba-4368-bea7-eb67614bd5e6" />
 <img width="1920" height="1080" alt="Ekran Görüntüsü (1434)" src="https://github.com/user-attachments/assets/6b4d145c-9159-46d6-8473-1eaab31c59da" />
 <img width="1920" height="1080" alt="Ekran Görüntüsü (1435)" src="https://github.com/user-attachments/assets/2c0aaf7e-57ec-44ef-9a68-37ec6287d542" />
-<img width="1920" height="1080" alt="Ekran Görüntüsü (1435)" src="https://github.com/user-attachments/assets/8603af65-f109-40c9-98b0-32fe768c7d6e" />
 <img width="1920" height="1080" alt="Ekran Görüntüsü (1436)" src="https://github.com/user-attachments/assets/bb7f7f25-66fe-4c8d-a8a6-40643bfb07a8" />
 <img width="1920" height="1080" alt="Ekran Görüntüsü (1437)" src="https://github.com/user-attachments/assets/0676093f-6eb7-47fe-8de5-c57f9284df8f" />
 <img width="1920" height="1080" alt="Ekran Görüntüsü (1442)" src="https://github.com/user-attachments/assets/a2648627-b4bf-4eb1-bd57-fef294e235d2" />
